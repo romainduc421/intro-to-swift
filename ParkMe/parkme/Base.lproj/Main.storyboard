@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JmD-BB-m1p">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--parkme-->
+        <scene sceneID="juk-Uq-q80">
+            <objects>
+                <viewController title="parkme" hidesBottomBarWhenPushed="YES" id="JmD-BB-m1p" customClass="ParkingLotViewController" customModule="parkme" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" id="dEh-Em-FhZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0oF-1K-eY4">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                            </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinRed" translatesAutoresizingMaskIntoConstraints="NO" id="VEF-7D-2YS">
+                                <rect key="frame" x="192" y="338" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="h5Q-Z5-M85"/>
+                                    <constraint firstAttribute="width" constant="60" id="wbO-lC-lw5"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="saW-Z4-JTZ"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" button="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0oF-1K-eY4" secondAttribute="trailing" id="1dg-io-sNH"/>
+                            <constraint firstItem="0oF-1K-eY4" firstAttribute="top" secondItem="saW-Z4-JTZ" secondAttribute="top" id="6Wy-Cu-BQk"/>
+                            <constraint firstItem="0oF-1K-eY4" firstAttribute="leading" secondItem="dEh-Em-FhZ" secondAttribute="leading" id="RHc-Hz-rS6"/>
+                            <constraint firstItem="0oF-1K-eY4" firstAttribute="bottom" secondItem="saW-Z4-JTZ" secondAttribute="bottom" id="TS3-5F-sCR"/>
+                            <constraint firstItem="VEF-7D-2YS" firstAttribute="centerX" secondItem="dEh-Em-FhZ" secondAttribute="centerX" constant="15" id="UMq-sG-pv8"/>
+                            <constraint firstItem="VEF-7D-2YS" firstAttribute="centerY" secondItem="dEh-Em-FhZ" secondAttribute="centerY" id="Xcc-oK-4SI"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="0oF-1K-eY4" id="bBz-oV-Xo7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kbf-Y5-O28" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2313.04347826087" y="-976.63043478260875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pinRed" width="298" height="246"/>
+    </resources>
+</document>
