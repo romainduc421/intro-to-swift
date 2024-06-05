@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VEb-x0-6zJ">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Accueil-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pendu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3t6-S5-zDa">
+                                <rect key="frame" x="16" y="109" width="361" height="282"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Le pendu est un jeu dans lequel vous devez deviner les lettres qui composent un mot secret. Quand vous choisissez une lettre, si elle est présente dans le mot secret, toutes ses occurrences sont dévoilées. Sinon, à chaque erreur un élément du gibet de potence se construit. Il faut trouver l'intégralité du mot en moins de 11 erreurs... sinon, vous êtes pendu !
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fn-d3-9fM">
+                                <rect key="frame" x="16" y="423" width="361" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Facile (2 lettres visibles)"/>
+                                <connections>
+                                    <segue destination="PvQ-7Q-DhH" kind="show" id="Liw-Mg-DE4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa1-dw-CxO">
+                                <rect key="frame" x="16" y="513" width="361" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Intermédiaire (1 lettre visible)"/>
+                                <connections>
+                                    <segue destination="PvQ-7Q-DhH" kind="show" id="JsC-kP-wbh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EwL-Kx-amX">
+                                <rect key="frame" x="16" y="606" width="361" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Difficile (toutes les lettres cachées)"/>
+                                <connections>
+                                    <segue destination="PvQ-7Q-DhH" kind="show" id="fvh-ic-asd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Accueil" id="cZt-OL-iYa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="938.16793893129773" y="-34.507042253521128"/>
+        </scene>
+        <!--Jeu du pendu-->
+        <scene sceneID="7MC-cg-nI9">
+            <objects>
+                <viewController id="PvQ-7Q-DhH" customClass="PenduViewController" customModule="Pendu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NzF-i6-DBp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="pendu0" translatesAutoresizingMaskIntoConstraints="NO" id="N0c-7p-F4D">
+                                <rect key="frame" x="49" y="103" width="295" height="396"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="B------E" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="db8-pZ-gfB">
+                                <rect key="frame" x="0.0" y="512" width="393" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XZ-wX-HHB">
+                                <rect key="frame" x="49" y="588" width="36" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="A"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="nHv-KK-c82"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JK4-mC-H0O">
+                                <rect key="frame" x="16" y="777" width="344" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojo-Lr-3n2">
+                                <rect key="frame" x="94" y="588" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="B"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="8O9-8i-Usd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhm-yu-Qmq">
+                                <rect key="frame" x="137" y="588" width="36" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="C"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="43W-GS-IoA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32t-fz-48H">
+                                <rect key="frame" x="181" y="588" width="36" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="D"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="jr4-SD-dL4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgY-wj-3ZB">
+                                <rect key="frame" x="226" y="588" width="34" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="E"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="gXu-oO-KR5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTL-0W-hnY">
+                                <rect key="frame" x="270" y="588" width="34" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="F"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="SMl-KP-tED"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFy-9W-4zZ">
+                                <rect key="frame" x="313" y="588" width="37" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="G"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="heu-Bn-IYH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ac5-aD-v32">
+                                <rect key="frame" x="49" y="631" width="37" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="H"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="wxi-A8-9Zl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2K-Fs-U60">
+                                <rect key="frame" x="97" y="631" width="29" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="I"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="p2b-Gz-KjG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeK-Gb-MJ2">
+                                <rect key="frame" x="139" y="631" width="33" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="J"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="Xo1-S7-LCu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pd9-Ak-JFw">
+                                <rect key="frame" x="182" y="631" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="K"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="D07-2l-Dpg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oo-cu-l7F">
+                                <rect key="frame" x="226" y="631" width="34" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="L"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="eW6-VD-zGu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RU0-ev-x59">
+                                <rect key="frame" x="268" y="631" width="39" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="M"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="ctO-cP-0kL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ID-Op-xrb">
+                                <rect key="frame" x="313" y="631" width="37" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="N"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="fDP-3x-MeS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7p-7V-4c9">
+                                <rect key="frame" x="49" y="674" width="37" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="O"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="SV7-ZY-d2o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kx4-W8-ifG">
+                                <rect key="frame" x="94" y="674" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="P"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="inm-3d-qPj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yjx-cc-9Ho">
+                                <rect key="frame" x="137" y="674" width="37" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Q"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="9kQ-y8-WZg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsF-jg-sGW">
+                                <rect key="frame" x="182" y="674" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="R"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="GsI-pV-aoh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhI-Dk-Evz">
+                                <rect key="frame" x="226" y="674" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="S"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="huX-Cg-YTE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGI-ek-OO7">
+                                <rect key="frame" x="270" y="674" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="T"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="JY4-Q2-Zdr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALU-xn-2vW">
+                                <rect key="frame" x="313" y="674" width="37" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="U"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="pCH-KE-SPC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuU-xi-TNN">
+                                <rect key="frame" x="93" y="717" width="36" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="V"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="5p7-J3-VPX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGo-7Y-Sf3">
+                                <rect key="frame" x="135" y="717" width="41" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="W"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="ph5-kJ-XS6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4K-0D-i40">
+                                <rect key="frame" x="181" y="717" width="36" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="X"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="yEb-ug-yzf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEE-lT-USr">
+                                <rect key="frame" x="226" y="717" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Y"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="onj-0C-EbL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTe-Py-L8b">
+                                <rect key="frame" x="270" y="717" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Z"/>
+                                <connections>
+                                    <action selector="clic:" destination="PvQ-7Q-DhH" eventType="touchUpInside" id="Fou-rt-Bwv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HdT-Km-GwT"/>
+                        <color key="backgroundColor" red="0.87907591832863285" green="0.84246293664548078" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Jeu du pendu" id="Np5-f1-8FH"/>
+                    <connections>
+                        <outlet property="message" destination="JK4-mC-H0O" id="iaK-yw-axd"/>
+                        <outlet property="mot" destination="db8-pZ-gfB" id="tVs-9j-zCB"/>
+                        <outlet property="vignette" destination="N0c-7p-F4D" id="UwD-GQ-FXU"/>
+                        <outletCollection property="boutons" destination="9XZ-wX-HHB" collectionClass="NSMutableArray" id="Eo8-A5-VxU"/>
+                        <outletCollection property="boutons" destination="ojo-Lr-3n2" collectionClass="NSMutableArray" id="bXo-jM-7R2"/>
+                        <outletCollection property="boutons" destination="fhm-yu-Qmq" collectionClass="NSMutableArray" id="Udh-2X-pz6"/>
+                        <outletCollection property="boutons" destination="32t-fz-48H" collectionClass="NSMutableArray" id="BDT-9f-c3i"/>
+                        <outletCollection property="boutons" destination="BgY-wj-3ZB" collectionClass="NSMutableArray" id="rfq-aP-FQs"/>
+                        <outletCollection property="boutons" destination="hTL-0W-hnY" collectionClass="NSMutableArray" id="rNv-kl-tLa"/>
+                        <outletCollection property="boutons" destination="sFy-9W-4zZ" collectionClass="NSMutableArray" id="XIt-L7-gUj"/>
+                        <outletCollection property="boutons" destination="ac5-aD-v32" collectionClass="NSMutableArray" id="HGD-Uw-GO5"/>
+                        <outletCollection property="boutons" destination="U2K-Fs-U60" collectionClass="NSMutableArray" id="GHz-gw-gsg"/>
+                        <outletCollection property="boutons" destination="KeK-Gb-MJ2" collectionClass="NSMutableArray" id="pki-OY-gWr"/>
+                        <outletCollection property="boutons" destination="Pd9-Ak-JFw" collectionClass="NSMutableArray" id="qNh-zM-mqI"/>
+                        <outletCollection property="boutons" destination="8oo-cu-l7F" collectionClass="NSMutableArray" id="0lB-wS-bRE"/>
+                        <outletCollection property="boutons" destination="RU0-ev-x59" collectionClass="NSMutableArray" id="2nV-fA-6E1"/>
+                        <outletCollection property="boutons" destination="3ID-Op-xrb" collectionClass="NSMutableArray" id="RGL-Bq-PFd"/>
+                        <outletCollection property="boutons" destination="S7p-7V-4c9" collectionClass="NSMutableArray" id="U4o-xV-e1a"/>
+                        <outletCollection property="boutons" destination="kx4-W8-ifG" collectionClass="NSMutableArray" id="9AG-QN-Qg8"/>
+                        <outletCollection property="boutons" destination="Yjx-cc-9Ho" collectionClass="NSMutableArray" id="RmO-eO-B5U"/>
+                        <outletCollection property="boutons" destination="nsF-jg-sGW" collectionClass="NSMutableArray" id="m2h-F9-3wv"/>
+                        <outletCollection property="boutons" destination="vhI-Dk-Evz" collectionClass="NSMutableArray" id="gpI-OF-Dl5"/>
+                        <outletCollection property="boutons" destination="tGI-ek-OO7" collectionClass="NSMutableArray" id="obA-21-5SG"/>
+                        <outletCollection property="boutons" destination="ALU-xn-2vW" collectionClass="NSMutableArray" id="XYf-Gl-D0R"/>
+                        <outletCollection property="boutons" destination="VuU-xi-TNN" collectionClass="NSMutableArray" id="Brw-iW-ge1"/>
+                        <outletCollection property="boutons" destination="KGo-7Y-Sf3" collectionClass="NSMutableArray" id="EJd-BO-DcG"/>
+                        <outletCollection property="boutons" destination="Z4K-0D-i40" collectionClass="NSMutableArray" id="889-z1-HPS"/>
+                        <outletCollection property="boutons" destination="uEE-lT-USr" collectionClass="NSMutableArray" id="0SF-86-fEU"/>
+                        <outletCollection property="boutons" destination="QTe-Py-L8b" collectionClass="NSMutableArray" id="2mf-Rc-1M3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dn7-uE-Tjl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1849.6183206106869" y="-35.211267605633807"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="puR-pS-ev4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VEb-x0-6zJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yvf-in-skA">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="j07-kR-oBa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Cc-Dp-nFF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11.450381679389313" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fvh-ic-asd"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="pendu0" width="552" height="737"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
